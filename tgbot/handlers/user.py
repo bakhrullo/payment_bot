@@ -36,7 +36,7 @@ async def get_course(c: CallbackQuery, state: FSMContext):
                               "<code>4278 3200 2016 8638</code>\nBakhtiyor Karimkulov\nVISA\n\n<code>9860 2401 0176 9745"
                               "</code>\nBakhtiyor Karimkulov\nHUMO\n\n<code>5614 6818 1644 2978</code>\nBakhtiyor Karimkulov\n"
                               "UZCARD\n\n"
-                              "Iltimos, to'lov qilib bo'lganingizdan keyin screenshotni shu yerga jo'nating! 😇")
+                              "Iltimos, to'lov qilib bo'lganingizdan keyin screenshotni shu yerga jo'nating! 😇", reply_markup=remove_btn)
     await UserState.next()
 
 
