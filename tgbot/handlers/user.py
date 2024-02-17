@@ -51,7 +51,7 @@ async def get_photo(m: Message, state: FSMContext):
 def register_user(dp: Dispatcher):
     dp.register_message_handler(user_start, commands=["start"], state="*", chat_type="private")
     dp.register_message_handler(get_name, state=UserState.get_name, chat_type="private")
-    dp.register_message_handler(get_number, state=UserState.get_number, content_types=['text', 'contact'],
+    dp.register_message_handler(get_number, state=UserState.get_number, content_types=['text', 'contact'], chat_type="private")
     dp.register_callback_query_handler(get_course, state=UserState.get_course, chat_type="private")
     dp.register_message_handler(get_photo, state=UserState.get_photo, content_types=['photo'], chat_type="private")
-                                chat_type="private")
+
