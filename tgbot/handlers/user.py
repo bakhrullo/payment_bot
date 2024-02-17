@@ -40,14 +40,13 @@ async def get_course(c: CallbackQuery, state: FSMContext):
     await UserState.next()
 
 
-async def get_photo(m: Message, state: FSMContext):
+async def get_photo(m: Message, state: FSMContext, config: Config):
     await m.answer("Operatorlarimiz tez orada sizga aloqaga chiqishadi! 😊️")
     data = await state.get_data()
     await m.bot.send_photo(config.tg_bot.group_id, m.photo[-1].file_id,
                            caption=f"👨 Ism: {data['name']}\n📱 Raqam: {phone}\n💸 Kurs: {data['course']}")
 
     
-
 
 def register_user(dp: Dispatcher):
     dp.register_message_handler(user_start, commands=["start"], state="*", chat_type="private")
