@@ -11,15 +11,18 @@ from tgbot.misc.states import UserState
 async def user_start(m: Message):
     await m.answer("Assalomu alaykum 😊\nSiz Ilhom Begimqulovning rasmiy to'lov botiga tashrif buyurdingiz!"
                    "\nQaysi kursizmizga yozilmoqchisiz ?\n"
-                   "1 STANDART 4 277 000 очирилган 3 277 000\n"
-                   "2 PREMIUM  4 977 000 очирилган 3 777 000\n"
-                   "3 VIP  50 000 000 очирилган 40 000 000", reply_markup=payments_kb)
+                   "1 STANDART <s>4 277 000</s>  3 277 000\n"
+                   "2 PREMIUM  <s>4 977 000</s>  3 777 000\n"
+                   "3 VIP  <s>50 000 000</s>  40 000 000", reply_markup=payments_kb)
     await UserState.get_course.set()
 
 
 async def get_course(c: CallbackQuery, state: FSMContext):
     await state.update_data(course=c.data)
-    await c.message.edit_text("Tolov uchun <code>8600 4545 4545 4545</code> Ilhom Begımqulov\n"
+    await c.message.edit_text("Tolov uchun:\n\n"
+                              "<code>4278 3200 2016 8638</code>\nBakhtiyor Karimkulov\nVISA\n\n<code>9860 2401 0176 9745"
+                              "</code>\nBakhtiyor Karimkulov\nHUMO\n\n<code>5614 6818 1644 2978</code>\nBakhtiyor Karimkulov\n"
+                              "UZCARD\n\n"
                               "Iltimos, to'lov qilib bo'lganingizdan keyin screenshotni shu yerga jo'nating! 😇")
     await UserState.next()
 
