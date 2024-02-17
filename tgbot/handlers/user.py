@@ -27,6 +27,7 @@ async def get_number(m: Message, state: FSMContext, config: Config):
                    "1 STANDART <s>4 277 000</s>  3 277 000\n"
                    "2 PREMIUM  <s>4 977 000</s>  3 777 000\n"
                    "3 VIP  <s>50 000 000</s>  40 000 000", reply_markup=payments_kb)
+    await UserState.next()
     
 
 async def get_course(c: CallbackQuery, state: FSMContext):
