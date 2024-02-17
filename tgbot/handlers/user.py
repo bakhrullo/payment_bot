@@ -44,7 +44,7 @@ async def get_photo(m: Message, state: FSMContext, config: Config):
     await m.answer("Operatorlarimiz tez orada sizga aloqaga chiqishadi! 😊️")
     data = await state.get_data()
     await m.bot.send_photo(config.tg_bot.group_id, m.photo[-1].file_id,
-                           caption=f"👨 Ism: {data['name']}\n📱 Raqam: {phone}\n💸 Kurs: {data['course']}")
+                           caption=f"👨 Ism: {data['name']}\n📱 Raqam: {data['phone']}\n💸 Kurs: {data['course']}")
 
     
 
