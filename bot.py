@@ -24,10 +24,10 @@ def register_all_filters(dp):
 
 
 def register_all_handlers(dp):
-    register_admin(dp)
+    # register_admin(dp)
     register_user(dp)
 
-    register_echo(dp)
+    # register_echo(dp)
 
 
 async def main():
@@ -45,7 +45,7 @@ async def main():
     bot['config'] = config
 
     register_all_middlewares(dp, config)
-    register_all_filters(dp)
+    # register_all_filters(dp)
     register_all_handlers(dp)
 
     # start
